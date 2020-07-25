@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
+
+    public UnityEvent OnDeath;
+
     [SerializeField]
     Dung Prefab;
 
@@ -29,8 +33,13 @@ public class Enemy : MonoBehaviour
     {
         BoidsManager.Instance.Boids.Remove(gameObject);
         Instantiate(Prefab, transform.position, Quaternion.identity);
+        OnDeath.Invoke();
+        Spawner gao = FindObjectOfType<Spawner>();
+        if(gao)
+        {
+            gao.SpawnAt(gameObject.transform);
+        }
         Destroy(this.gameObject);
-
     }
 
     public void applyDmg()
