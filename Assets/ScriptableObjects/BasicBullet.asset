@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BasicBullet
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManagerScriptableObject
   Dammage: 1
-  Speed: 20
+  Speed: 10
   Life: 1
   Radius: 0.1
