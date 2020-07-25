@@ -864,6 +864,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1877561832342557391, guid: fb562ba1cdec17b41827c946e96b07ce,
+        type: 3}
+      propertyPath: FireWeapon
+      value: 
+      objectReference: {fileID: 1950347170}
+    - target: {fileID: 1877561832342557391, guid: fb562ba1cdec17b41827c946e96b07ce,
+        type: 3}
+      propertyPath: Vacum
+      value: 
+      objectReference: {fileID: 412609829}
     - target: {fileID: 4462608549882878484, guid: fb562ba1cdec17b41827c946e96b07ce,
         type: 3}
       propertyPath: m_IsActive
@@ -900,6 +910,12 @@ Transform:
 --- !u!58 &412609828 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 4080120482542898930, guid: fb562ba1cdec17b41827c946e96b07ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 399746029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &412609829 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5235334721741559939, guid: fb562ba1cdec17b41827c946e96b07ce,
     type: 3}
   m_PrefabInstance: {fileID: 399746029}
   m_PrefabAsset: {fileID: 0}
@@ -8499,6 +8515,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
     type: 3}
   m_PrefabInstance: {fileID: 925942705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1950347170 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 107112518, guid: fb562ba1cdec17b41827c946e96b07ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 399746029}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1952981896
 PrefabInstance:

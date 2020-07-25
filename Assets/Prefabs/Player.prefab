@@ -280,6 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 831de2a1e9b17a2408481d569bbb2785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireWeapon: {fileID: 107112515}
+  Vacum: {fileID: 4462608549882878484}
   movementSpeed: 5
   AngularSpeed: 1
 --- !u!50 &1877561832342557379

@@ -1,9 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class MyIntEvent : UnityEvent<int>
+{
+}
 
 public class IsometricPlayerMovementController : MonoBehaviour
 {
+    [SerializeField]
+    SpriteRenderer FireWeapon;
+    [SerializeField]
+    SpriteRenderer Vacum;
+
     public static Vector2 lastWantedDirection = Vector2.zero;
     public float movementSpeed = 1f;
     public float AngularSpeed = 1f;
@@ -61,5 +71,20 @@ public class IsometricPlayerMovementController : MonoBehaviour
         Vector2 movement = inputVector * movementSpeed;
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         rbody.MovePosition(newPos);
+    }
+
+    public void SwitchWeapon(int WeaponIndex)
+    {
+        if(WeaponIndex == 0)
+        {
+            FireWeapon.enabled = true;
+            Vacum.enabled = false;
+            Vacum.GetComponent<VacumWeapon>().EndVacume();
+        }
+        else
+        {
+            FireWeapon.enabled = false;
+            Vacum.enabled = true;
+        }
     }
 }

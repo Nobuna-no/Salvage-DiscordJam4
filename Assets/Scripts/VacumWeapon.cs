@@ -55,7 +55,7 @@ public class VacumWeapon : Weapon
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
@@ -73,6 +73,7 @@ public class VacumWeapon : Weapon
 
             if(value)
             {
+                IsoController.SwitchWeapon(1);
                 OnVacumStart?.Invoke();
             }
             else
@@ -81,5 +82,11 @@ public class VacumWeapon : Weapon
             }
         }
     }
+
+    public void EndVacume()
+    {
+        OnVacumEnd?.Invoke();
+    }
+
 
 }
