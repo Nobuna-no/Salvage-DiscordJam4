@@ -36,14 +36,15 @@ public class IsometricPlayerMovementController : MonoBehaviour
             { 
                 LastDirection = direction;
                 isoRenderer.SetDirection(direction);
-                OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
+                //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
             }
         }
         else if(MousePosition != Input.mousePosition)
         {
             direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-            OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
+            //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
             MousePosition = Input.mousePosition;
+            isoRenderer.SetDirection(direction);
         }
 
 
