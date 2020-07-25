@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
     }
 
     private void Awake()
@@ -36,10 +35,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Debug.Log("Enemy Hurt");
+            Life--;
         }
-        Life--;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Life = 0;
+        }
     }
 }
