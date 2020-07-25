@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4396131970811870736}
   - component: {fileID: 8794538465803238669}
   - component: {fileID: 5940548342592356649}
+  - component: {fileID: 898147188853925921}
   m_Layer: 0
   m_Name: BasicBullet
   m_TagString: Untagged
@@ -134,4 +135,15 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!210 &898147188853925921
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4396131970811870748}
+  m_Enabled: 1
+  m_SortingLayerID: -1379475309
+  m_SortingLayer: 1
+  m_SortingOrder: 0
