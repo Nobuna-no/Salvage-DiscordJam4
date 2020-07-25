@@ -17,9 +17,10 @@ public class Weapon : MonoBehaviour
 
     void Shoot()
     {
-        GameObject Go = Instantiate(AmmoType.gameObject, IsoController.transform.position + 0.5f * new Vector3(IsometricPlayerMovementController.lastWantedDirection.normalized.x, IsometricPlayerMovementController.lastWantedDirection.normalized.y), Quaternion.identity);
+        Vector2 normalizedDirection = IsometricPlayerMovementController.lastWantedDirection.normalized;
+        GameObject Go = Instantiate(AmmoType.gameObject, IsoController.transform.position + 0.5f * new Vector3(normalizedDirection.x, normalizedDirection.y), Quaternion.identity);
         Go.GetComponent<Bullet>().SetRadius(AmmoType.script.Radius);
-        Go.GetComponent<Rigidbody2D>().AddForce(IsometricPlayerMovementController.lastWantedDirection.normalized * AmmoType.script.Speed, ForceMode2D.Impulse);
+        Go.GetComponent<Rigidbody2D>().AddForce(normalizedDirection * AmmoType.script.Speed, ForceMode2D.Impulse);
     }
 
     private void Update()
