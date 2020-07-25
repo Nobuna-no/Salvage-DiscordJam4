@@ -43,6 +43,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
             //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
             MousePosition = Input.mousePosition;
             isoRenderer.SetDirection(direction);
+        }
+
+        if(direction != Vector2.zero)
+        {
             lastWantedDirection = direction;
         }
 
