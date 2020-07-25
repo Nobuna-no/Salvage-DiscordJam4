@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameWorld;
 
 public class Enemy : MonoBehaviour
 {
@@ -27,8 +28,10 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
+        BoidsManager.Instance.Boids.Remove(gameObject);
         Instantiate(Prefab, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
+
     }
 
     public void applyDmg()

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 9052873508390397350}
   - component: {fileID: 9052873508390397351}
   - component: {fileID: 9052873508390397346}
+  - component: {fileID: 736363866498006807}
   m_Layer: 8
   m_Name: Michel
   m_TagString: Untagged
@@ -209,3 +210,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4831635838060103233, guid: b1d422534f023994b8efc503145fcaab, type: 3}
   life: 3
+--- !u!114 &736363866498006807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052873508390397352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9d08247348b3e4aa13734904d5f77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 1
+  AngularSpeed: 1

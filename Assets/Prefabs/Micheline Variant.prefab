@@ -78,10 +78,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9052873508390397351, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397352, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_Name
-      value: Micheline
+      value: Micheline Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d29e2d9d11cd4542b5fc68e3856952d, type: 3}

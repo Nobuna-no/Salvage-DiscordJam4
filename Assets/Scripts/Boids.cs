@@ -11,16 +11,16 @@ namespace GameWorld
     {
         public static int MaxBoidsCount = 50;
         // Boids' detection distance with other objects.
-        public const float DetectionDistanceSquared = 500.0f * 500.0f;
+        public const float DetectionDistanceSquared = 5.0f * 5.0f;
         // Boids' detection distance with other objects.
-        public const float SeparationDistanceSquared = 25.0f * 25.0f;
+        public const float SeparationDistanceSquared = 1.0f * 1.0f;
         // Boids' safety distance from the predator.
-        public const float SafetyDistanceSquared = 150.0f * 150.0f;
+        public const float SafetyDistanceSquared = 5.0f * 5.0f;
 
         // Boid's grouping movement percentage per frame.
         public const float GroupingPercentage = 5.0f;
-        // Boid's separation fMonoBehaviour.
-        public const float SeparationFMonoBehaviour = 1.0f;
+        // Boid's separation fGameObject.
+        public const float SeparationFGameObject = 1.0f;
         // Boid's cohesion movement percentage per frame.
         public const float CohesionPercentage = 50.0f;
         // Boid's predator avoidance percentage per frame.
@@ -49,8 +49,8 @@ namespace GameWorld
             }
         }
 
-        public List<MonoBehaviour> Boids; // Generic simulated flocking MonoBehaviours.
-        public List<MonoBehaviour> Predators; // MonoBehaviour to avoid as boid.
+        public List<GameObject> Boids; // Generic simulated flocking GameObjects.
+        public List<GameObject> Predators; // GameObject to avoid as boid.
         #endregion
 
 
@@ -58,17 +58,17 @@ namespace GameWorld
         // private constructor. Only available for singleton instantiation.
         private BoidsManager(int boidsCount)
         {
-            Boids = new List<MonoBehaviour>(boidsCount);
-            Predators = new List<MonoBehaviour>();
+            Boids = new List<GameObject>(boidsCount);
+            Predators = new List<GameObject>();
         }
         #endregion
 
 
         #region MAIN BOIDS RULES METHODS
         // Rule 1: Boids try to fly towards the centre of mass of neighbouring boids.
-        private Vector2 BoidsGrouping(MonoBehaviour currentBoid)
+        private Vector2 BoidsGrouping(GameObject currentBoid)
         {
-            MonoBehaviour b;
+            GameObject b;
             Vector2 vel = Vector2.zero;
             int boidsCount = 0;
 
@@ -95,9 +95,9 @@ namespace GameWorld
         }
 
         // Rule two: Boids try to keep a small distance away from other objects (including other boids)
-        private Vector2 BoidsSeparation(MonoBehaviour currentBoid)
+        private Vector2 BoidsSeparation(GameObject currentBoid)
         {
-            MonoBehaviour b;
+            GameObject b;
             Vector2 seprationForce = Vector2.zero;
 
             for (int i = 0, c = Boids.Count; i < c; ++i)
@@ -113,13 +113,13 @@ namespace GameWorld
                 }
             }
 
-            return seprationForce * BoidData.SeparationFMonoBehaviour;
+            return seprationForce * BoidData.SeparationFGameObject;
         }
 
         // Rule three: Boids try to match velocity with near boids.
-        private Vector2 BoidsCohesion(MonoBehaviour currentBoid)
+        private Vector2 BoidsCohesion(GameObject currentBoid)
         {
-            MonoBehaviour b;
+            GameObject b;
             Vector2 perceivedVelocity = Vector2.zero;
             int boidsCount = 0;
 
@@ -152,9 +152,9 @@ namespace GameWorld
         /// <param name="out_groupingAcc"></param>
         /// <param name="out_separationAcc"></param>
         /// <param name="out_cohesionAcc"></param>
-        public void BoidsGSC(MonoBehaviour currentBoid, out Vector2 out_groupingAcc, out Vector2 out_separationAcc, out Vector2 out_cohesionAcc)
+        public void BoidsGSC(GameObject currentBoid, out Vector2 out_groupingAcc, out Vector2 out_separationAcc, out Vector2 out_cohesionAcc)
         {
-            MonoBehaviour b;
+            GameObject b;
             out_groupingAcc = out_separationAcc = out_cohesionAcc = Vector2.zero;
             int boidsCount = 0;
 
@@ -188,7 +188,7 @@ namespace GameWorld
             // Compute direction vector to average boids velocity. Moving 1 + X% in that direction.
             out_cohesionAcc = (out_cohesionAcc / boidsCount - currentBoid.GetComponent<Rigidbody2D>().velocity) * 0.01f * BoidData.CohesionPercentage;
 
-            out_separationAcc *= BoidData.SeparationFMonoBehaviour;
+            out_separationAcc *= BoidData.SeparationFGameObject;
         }
         #endregion
 
@@ -199,7 +199,7 @@ namespace GameWorld
         /// </summary>
         /// <param name="currentBoid">Targeted boid.</param>
         /// <returns>Velocity vector to add to boid's velocity.</returns>
-        public Vector2 AvoidPredator(MonoBehaviour currentBoid)
+        public Vector2 AvoidPredator(GameObject currentBoid)
         {
             if (Predators.Count == 0)
             {
@@ -210,7 +210,7 @@ namespace GameWorld
             Vector2 predatorPosition = Vector2.zero;
             for (int i = 0, c = Predators.Count; i < c; ++i)
             {
-                MonoBehaviour p = Predators[i];
+                GameObject p = Predators[i];
                 float squaredDistance = Vector3.SqrMagnitude(p.transform.position - currentBoid.transform.position);
 
                 if (squaredDistance < BoidData.SafetyDistanceSquared && squaredDistance < lastSquaredDistance)
@@ -225,7 +225,7 @@ namespace GameWorld
                 return predatorPosition;
             }
 
-            // 1% moving to the place. FMonoBehaviour -1 to move avay from it.
+            // 1% moving to the place. FGameObject -1 to move avay from it.
             return (predatorPosition - new Vector2(currentBoid.transform.position.x, currentBoid.transform.position.y)) * -0.01f * BoidData.FleeingPredatorPercentage;
         }
 
@@ -235,7 +235,7 @@ namespace GameWorld
         /// </summary>
         /// <param name="currentBoid">Targeted boid.</param>
         /// <returns>Velocity vector to add to boid's velocity.</returns>
-        public static Vector2 BorderBouncing(MonoBehaviour currentBoid)
+        public static Vector2 BorderBouncing(GameObject currentBoid)
         {
             /*const float borderOffset = 50.0f;
             float xMin = borderOffset, xMax = Application.Current.MainWindow.ActualWidth - borderOffset,

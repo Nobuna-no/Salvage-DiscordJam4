@@ -7,7 +7,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
 {
     public static Vector2 lastWantedDirection = Vector2.zero;
     public float movementSpeed = 1f;
-    public float AngularSpeed = 1f;
+    
     IsometricCharacterRenderer isoRenderer;
 
     Rigidbody2D rbody;
@@ -21,7 +21,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
-        BoidsManager.Instance.Boids.Add(this);
+        BoidsManager.Instance.Boids.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -30,9 +30,9 @@ public class IsometricAutonomousMovementController : MonoBehaviour
         //m_ownedActor.AddMovementInput(MathUtils.ForwardVector.Rotate(m_ownedActor.Rotation), 1);
 
         Vector2 groupingAcc, separationAcc, cohesionAcc;
-        BoidsManager.Instance.BoidsGSC(this, out groupingAcc, out separationAcc, out cohesionAcc);
-        Vector2 fleeingAcc = BoidsManager.Instance.AvoidPredator(this);
-        Vector2 borderBouncingAcc = BoidsManager.BorderBouncing(this);
+        BoidsManager.Instance.BoidsGSC(gameObject, out groupingAcc, out separationAcc, out cohesionAcc);
+        Vector2 fleeingAcc = BoidsManager.Instance.AvoidPredator(gameObject);
+        Vector2 borderBouncingAcc = BoidsManager.BorderBouncing(gameObject);
 
         // POLISH: if near to predator, break the grouping beahviour 
         // and increase the border bouncing in order to better avoid walls in panic.
@@ -41,8 +41,8 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             groupingAcc *= -1.0f;
             borderBouncingAcc *= 5.0f;
         }
-
-        GetComponent<Rigidbody2D>().AddForce(groupingAcc + separationAcc + cohesionAcc + fleeingAcc + borderBouncingAcc, ForceMode2D.Force);
+        Vector2 forceSum = groupingAcc + separationAcc + cohesionAcc + fleeingAcc + borderBouncingAcc;
+        GetComponent<Rigidbody2D>().AddForce(forceSum * movementSpeed, ForceMode2D.Force);
         isoRenderer.SetDirection(GetComponent<Rigidbody2D>().velocity);
     }
 }
