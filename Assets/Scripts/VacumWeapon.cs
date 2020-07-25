@@ -5,14 +5,10 @@ using UnityEngine;
 public class VacumWeapon : Weapon
 {
     [SerializeField]
-    public Bullet AmmoType;
-
-    public void Vacume()
+    CircleCollider2D circle;
+    public void Vacume(bool value)
     {
-        Vector2 normalizedDirection = IsometricPlayerMovementController.lastWantedDirection.normalized;
-        GameObject Go = Instantiate(AmmoType.gameObject, IsoController.transform.position + 0.5f * new Vector3(normalizedDirection.x, normalizedDirection.y), Quaternion.identity);
-        Go.GetComponent<Bullet>().SetRadius(AmmoType.script.Radius);
-        Go.GetComponent<Rigidbody2D>().AddForce(normalizedDirection * AmmoType.script.Speed, ForceMode2D.Impulse);
+        circle.enabled = value;
     }
 
     bool canVacume = true;
@@ -29,23 +25,35 @@ public class VacumWeapon : Weapon
 
         if (Input.GetAxis("collect") == 1 && canVacume)
         {
-            Vacume();
             if(fireRate > 0)
             {
+                Vacume(true);
                 fireRate -= Time.deltaTime;
             }
             else
             {
+                Vacume(false);
                 canVacume = false;
             }
         }
         else if(!canVacume || Input.GetAxis("collect") == 0)
         {
+            Vacume(false);
             fireRate = Mathf.Min(fireRate + Time.deltaTime, Lastfired);
             if(!canVacume)
             { 
                 canVacume = fireRate == Lastfired;
             }
         }
+
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().applyDmg();
+        }
+    }
+
 }

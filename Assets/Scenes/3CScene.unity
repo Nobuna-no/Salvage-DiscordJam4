@@ -773,7 +773,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 107112515, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
       propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.size
@@ -885,6 +885,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 399746029}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &412609828 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4080120482542898930, guid: fb562ba1cdec17b41827c946e96b07ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 399746029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &412609830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,8 +908,7 @@ MonoBehaviour:
   weaponDistanceFromPlayer: 0.3
   bonusDegree: 60
   TargetOffsetFactor: -50
-  AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
-    type: 3}
+  circle: {fileID: 412609828}
 --- !u!1001 &418447695
 PrefabInstance:
   m_ObjectHideFlags: 0
