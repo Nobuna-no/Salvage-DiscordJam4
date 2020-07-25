@@ -90,4 +90,9 @@ public class IsometricCharacterRenderer : MonoBehaviour
         return hashArray;
     }
 
+    private void Update()
+    {
+        GetComponent<Renderer>().sortingOrder = -(int) (transform.position.y* 100);
+    }
+
 }
