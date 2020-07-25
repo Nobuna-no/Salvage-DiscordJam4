@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
 	[SerializeField] private GameObject quitButton = null;
+	[SerializeField] private int gameSceneIndex = 1;
+	[SerializeField] private GameObject mainMenu = null;
+	[SerializeField] private GameObject credits = null;
 
 #if UNITY_WEBGL
 	private void Awake()
@@ -13,7 +17,13 @@ public class MainMenuUI : MonoBehaviour
 
 	public void StartGame()
 	{
-		// TODO: Load scene 1
+		SceneManager.LoadScene(gameSceneIndex, LoadSceneMode.Single);
+	}
+
+	public void ShowCredits(bool visible)
+	{
+		mainMenu.SetActive(!visible);
+		credits.SetActive(visible);
 	}
 
 	public void Quit()
