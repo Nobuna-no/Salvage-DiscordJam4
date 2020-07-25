@@ -5,6 +5,6 @@ public class BulletSO : ScriptableObject
 {
     public int Dammage;
     public float Speed;
-    public float Life;
+    public int Life;
     public float Radius;
 }
