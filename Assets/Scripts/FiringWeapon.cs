@@ -24,7 +24,7 @@ public class FiringWeapon : Weapon
 
     public void Shoot()
     {
-        OnFiringStart.Invoke();
+        OnFiringStart?.Invoke();
         Vector2 normalizedDirection = IsometricPlayerMovementController.lastWantedDirection.normalized;
         GameObject Go = Instantiate(AmmoType.gameObject, IsoController.transform.position + 0.5f * new Vector3(normalizedDirection.x, normalizedDirection.y), Quaternion.identity);
         Go.GetComponent<Bullet>().SetRadius(AmmoType.script.Radius);

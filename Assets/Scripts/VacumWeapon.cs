@@ -34,7 +34,7 @@ public class VacumWeapon : Weapon
             }
             else
             {
-                OnVacumeOverHeatMax.Invoke();
+                OnVacumeOverHeatMax?.Invoke();
                 Vacume(false);
                 canVacume = false;
             }
@@ -48,7 +48,7 @@ public class VacumWeapon : Weapon
                 canVacume = fireRate == Lastfired;
                 if(canVacume)
                 {
-                    OnVacumeOverHeatEnd.Invoke();
+                    OnVacumeOverHeatEnd?.Invoke();
                 }
             }
         }
@@ -68,11 +68,11 @@ public class VacumWeapon : Weapon
         circle.enabled = value;
         if (value)
         {
-            OnVacumStart.Invoke();
+            OnVacumStart?.Invoke();
         }
         else
         {
-            OnVacumEnd.Invoke();
+            OnVacumEnd?.Invoke();
         }
     }
 
