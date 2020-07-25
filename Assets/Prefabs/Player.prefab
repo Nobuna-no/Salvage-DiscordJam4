@@ -119,6 +119,9 @@ MonoBehaviour:
   TargetOffsetFactor: -50
   AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
     type: 3}
+  OnFiringStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1318208124
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,4 +543,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.1, y: -0.02}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.2

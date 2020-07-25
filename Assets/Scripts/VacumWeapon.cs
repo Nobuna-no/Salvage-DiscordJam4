@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VacumWeapon : Weapon
 {
     [SerializeField]
     CircleCollider2D circle;
-    public void Vacume(bool value)
-    {
-        circle.enabled = value;
-    }
+
+    public static UnityEvent OnVacumStart;
+    public static UnityEvent OnVacumEnd;
+    public static UnityEvent OnVacumeOverHeatMax;
+    public static UnityEvent OnVacumeOverHeatEnd;
 
     bool canVacume = true;
 
@@ -32,6 +34,7 @@ public class VacumWeapon : Weapon
             }
             else
             {
+                OnVacumeOverHeatMax.Invoke();
                 Vacume(false);
                 canVacume = false;
             }
@@ -43,6 +46,10 @@ public class VacumWeapon : Weapon
             if(!canVacume)
             { 
                 canVacume = fireRate == Lastfired;
+                if(canVacume)
+                {
+                    OnVacumeOverHeatEnd.Invoke();
+                }
             }
         }
 
@@ -53,6 +60,19 @@ public class VacumWeapon : Weapon
         if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().applyDmg();
+        }
+    }
+
+    public void Vacume(bool value)
+    {
+        circle.enabled = value;
+        if (value)
+        {
+            OnVacumStart.Invoke();
+        }
+        else
+        {
+            OnVacumEnd.Invoke();
         }
     }
 
