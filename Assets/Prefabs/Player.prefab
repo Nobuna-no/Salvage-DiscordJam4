@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1877561832342557391}
   - component: {fileID: 1877561832342557379}
   - component: {fileID: 1877561832342557390}
+  - component: {fileID: -6193591814828210981}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  AngularSpeed: 1
 --- !u!50 &1877561832342557379
 Rigidbody2D:
   serializedVersion: 4
@@ -158,6 +160,21 @@ SortingGroup:
   m_SortingLayerID: -1379475309
   m_SortingLayer: 1
   m_SortingOrder: 0
+--- !u!114 &-6193591814828210981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877561832342557389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea29086ae8d47be41adda073ba167f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
+    type: 3}
+  fireRate: 0.1
 --- !u!1 &1877561832539134841
 GameObject:
   m_ObjectHideFlags: 0
