@@ -20,6 +20,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
+
+        BoidsManager.Instance.Predators.Add(gameObject);
     }
 
     // Update is called once per frame
