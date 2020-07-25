@@ -37,7 +37,6 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("Enemy Hurt");
             Life--;
             collision.gameObject.GetComponent<Enemy>().applyDmg();
         }

@@ -771,6 +771,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107112515, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+      propertyPath: myUnityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1877561832342557377, guid: fb562ba1cdec17b41827c946e96b07ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -836,7 +864,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4462608549882878484, guid: fb562ba1cdec17b41827c946e96b07ce,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2423786718307407991, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
+    - {fileID: 107112517, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
 --- !u!4 &399746030 stripped
 Transform:
@@ -844,6 +879,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 399746029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &412609826 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4462608549882878484, guid: fb562ba1cdec17b41827c946e96b07ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 399746029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &412609830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412609826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a7c4761d493284aa4ba5ccd92bac40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
+  IsoController: {fileID: 1094361009}
+  weaponDistanceFromPlayer: 0.3
+  bonusDegree: 60
+  TargetOffsetFactor: -50
+  AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
+    type: 3}
 --- !u!1001 &418447695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5393,6 +5453,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7190809}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1094361009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1877561832342557391, guid: fb562ba1cdec17b41827c946e96b07ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 399746029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831de2a1e9b17a2408481d569bbb2785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1138398908 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2256402593373285698, guid: 054dde8a44d6a6a4d9dc375dcdf853cd,
