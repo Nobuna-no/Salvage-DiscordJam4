@@ -7,7 +7,7 @@ public class EndMenuUI : MonoBehaviour
 	[SerializeField] private Score score = null;
 	[SerializeField] private TextMeshProUGUI text = null;
 	[SerializeField] private int mainMenuSceneIndex = 0;
-	[SerializeField] private int gameSceneIndex = 1;
+	[SerializeField] private Level levels = null;
 
 	public void Awake()
 	{
@@ -16,7 +16,7 @@ public class EndMenuUI : MonoBehaviour
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene(gameSceneIndex, LoadSceneMode.Single);
+		SceneManager.LoadScene(levels.GetRandomScene(), LoadSceneMode.Single);
 	}
 
 	public void Back()
