@@ -153,7 +153,7 @@ MonoBehaviour:
   score: {fileID: 11400000, guid: cb05c059d51e8434ba24888f86710fe0, type: 2}
   text: {fileID: 2036022859}
   mainMenuSceneIndex: 0
-  gameSceneIndex: 1
+  levels: {fileID: 11400000, guid: d231b58cd8aa7364793841388c79f102, type: 2}
 --- !u!4 &104916396
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class IsometricCharacterRenderer : MonoBehaviour
     Animator animator;
     int lastDirection;
 
+    Vector3 LastDirection;
+
     private void Awake()
     {
         //cache the animator component
@@ -19,8 +21,8 @@ public class IsometricCharacterRenderer : MonoBehaviour
     }
 
 
-    public void SetDirection(Vector2 direction){
-
+    public void SetDirection(Vector2 direction)
+    {
         //use the Run states by default
         string[] directionArray = null;
 
@@ -48,7 +50,8 @@ public class IsometricCharacterRenderer : MonoBehaviour
 
     //this function converts a Vector2 direction to an index to a slice around a circle
     //this goes in a counter-clockwise direction.
-    public static int DirectionToIndex(Vector2 dir, int sliceCount){
+    public static int DirectionToIndex(Vector2 dir, int sliceCount)
+    {
         //get the normalized direction
         Vector2 normDir = dir.normalized;
         //calculate how many degrees one slice is
@@ -70,12 +73,6 @@ public class IsometricCharacterRenderer : MonoBehaviour
         //round it, and we have the answer!
         return Mathf.FloorToInt(stepCount);
     }
-
-
-
-
-
-
 
     //this function converts a string array to a int (animator hash) array.
     public static int[] AnimatorStringArrayToHashArray(string[] animationArray)
