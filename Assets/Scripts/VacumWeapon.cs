@@ -8,10 +8,10 @@ public class VacumWeapon : Weapon
     [SerializeField]
     CircleCollider2D circle;
 
-    public static UnityEvent OnVacumStart;
-    public static UnityEvent OnVacumEnd;
-    public static UnityEvent OnVacumeOverHeatMax;
-    public static UnityEvent OnVacumeOverHeatEnd;
+    public UnityEvent OnVacumStart;
+    public UnityEvent OnVacumEnd;
+    public UnityEvent OnVacumeOverHeatMax;
+    public UnityEvent OnVacumeOverHeatEnd;
 
     bool canVacume = true;
 
@@ -63,16 +63,22 @@ public class VacumWeapon : Weapon
         }
     }
 
+    bool m_LastVacumValue = false;
     public void Vacume(bool value)
     {
         circle.enabled = value;
-        if (value)
+        if (m_LastVacumValue  != value)
         {
-            OnVacumStart?.Invoke();
-        }
-        else
-        {
-            OnVacumEnd?.Invoke();
+            m_LastVacumValue = value;
+
+            if(value)
+            {
+                OnVacumStart?.Invoke();
+            }
+            else
+            {
+                OnVacumEnd?.Invoke();
+            }
         }
     }
 
