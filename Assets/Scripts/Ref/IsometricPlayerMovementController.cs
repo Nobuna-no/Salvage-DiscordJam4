@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IsometricPlayerMovementController : MonoBehaviour
 {
-
     public float movementSpeed = 1f;
     public float AngularSpeed = 1f;
     IsometricCharacterRenderer isoRenderer;
@@ -25,10 +24,8 @@ public class IsometricPlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         Vector2 direction = new Vector2(Input.GetAxisRaw("RightHorizontal"), Input.GetAxisRaw("RightVertical"));
-        Vector2 inputRotationVector = Vector2.ClampMagnitude(direction, 1);
-        direction = inputRotationVector * AngularSpeed;
+        direction = direction * AngularSpeed;
 
         if (direction != Vector2.zero)
         {
