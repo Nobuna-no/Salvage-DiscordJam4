@@ -10,9 +10,10 @@ public class Weapon : MonoBehaviour
     bool fired = false;
     void Shoot()
     {
-        GameObject Go = Instantiate(AmmoType.gameObject, transform.position, transform.rotation);
+        
+        GameObject Go = Instantiate(AmmoType.gameObject, FindObjectOfType<IsometricPlayerMovementController>().transform.position + 0.5f * new Vector3(IsometricPlayerMovementController.lastWantedDirection.normalized.x, IsometricPlayerMovementController.lastWantedDirection.normalized.y), Quaternion.identity);
         Go.GetComponent<Bullet>().SetRadius(AmmoType.script.Radius);
-        Go.GetComponent<Rigidbody2D>().AddForce(transform.forward * AmmoType.script.Speed, ForceMode2D.Impulse);
+        Go.GetComponent<Rigidbody2D>().AddForce(IsometricPlayerMovementController.lastWantedDirection.normalized * AmmoType.script.Speed, ForceMode2D.Impulse);
     }
 
     private void Update()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IsometricPlayerMovementController : MonoBehaviour
 {
+    public static Vector2 lastWantedDirection = Vector2.zero;
     public float movementSpeed = 1f;
     public float AngularSpeed = 1f;
     IsometricCharacterRenderer isoRenderer;
@@ -42,6 +43,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
             //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
             MousePosition = Input.mousePosition;
             isoRenderer.SetDirection(direction);
+            lastWantedDirection = direction;
         }
 
 
