@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
 	[SerializeField] private GameObject quitButton = null;
-	[SerializeField] private int gameSceneIndex = 1;
+	[SerializeField] private Level levels = null;
 	[SerializeField] private GameObject mainMenu = null;
 	[SerializeField] private GameObject credits = null;
 
@@ -17,7 +17,7 @@ public class MainMenuUI : MonoBehaviour
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene(gameSceneIndex, LoadSceneMode.Single);
+		SceneManager.LoadScene(levels.GetRandomScene(), LoadSceneMode.Single);
 	}
 
 	public void ShowCredits(bool visible)

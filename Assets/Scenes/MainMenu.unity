@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quitButton: {fileID: 1806780202}
-  gameSceneIndex: 1
+  levels: {fileID: 11400000, guid: d231b58cd8aa7364793841388c79f102, type: 2}
   mainMenu: {fileID: 1553565775}
   credits: {fileID: 1871432409}
 --- !u!4 &104916396
