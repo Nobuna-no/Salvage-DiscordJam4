@@ -39,17 +39,15 @@ public class Escape : MonoBehaviour
 
     IEnumerator SuccessfullEscape()
     {
-        while(m_Escapist.Count != 0)
+        yield return new WaitForSeconds(escapeRate);
+        if (m_Escapist.Count != 0)
         {
-            yield return new WaitForSeconds(escapeRate);
-            if (m_Escapist.Count != 0)
-            {
-                GameObject go = m_Escapist[Random.Range(0, m_Escapist.Count)];
-                m_Escapist.Remove(go);
-                BoidsManager.Instance.Boids.Remove(go);
-                Destroy(go);
-            }
+            GameObject go = m_Escapist[Random.Range(0, m_Escapist.Count)];
+            m_Escapist.Remove(go);
+            BoidsManager.Instance.Boids.Remove(go);
+            Destroy(go);
         }
+        StartCoroutine(SuccessfullEscape());
     }
 
 }
