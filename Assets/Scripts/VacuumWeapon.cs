@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class VacumWeapon : Weapon
+public class VacuumWeapon : Weapon
 {
     [SerializeField]
     CircleCollider2D circle;
@@ -59,7 +59,7 @@ public class VacumWeapon : Weapon
     {
         if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemy>().applyDmg();
+            collision.gameObject.GetComponent<Enemy>().Kill();
         }
     }
 

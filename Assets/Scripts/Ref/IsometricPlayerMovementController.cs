@@ -12,7 +12,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
     [SerializeField]
     SpriteRenderer FireWeapon;
     [SerializeField]
-    SpriteRenderer Vacum;
+    SpriteRenderer Vacuum;
 
     public static Vector2 lastWantedDirection = Vector2.zero;
     public float movementSpeed = 1f;
@@ -78,13 +78,13 @@ public class IsometricPlayerMovementController : MonoBehaviour
         if(WeaponIndex == 0)
         {
             FireWeapon.enabled = true;
-            Vacum.enabled = false;
-            Vacum.GetComponent<VacumWeapon>().EndVacume();
+            Vacuum.enabled = false;
+            Vacuum.GetComponent<VacuumWeapon>().EndVacume();
         }
         else
         {
             FireWeapon.enabled = false;
-            Vacum.enabled = true;
+            Vacuum.enabled = true;
         }
     }
 }
