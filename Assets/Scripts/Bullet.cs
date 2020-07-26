@@ -61,6 +61,7 @@ public class Bullet : MonoBehaviour
 
     IEnumerator DelayBeforeKill()
     {
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         yield return new WaitForSeconds(DelayBeforeDestroy);
         Destroy(this.gameObject);
     }
