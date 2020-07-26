@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mars Attack
+  m_text: Space Rescue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f991bfc0bff0954aa8d696674e310e7, type: 2}
   m_sharedMaterial: {fileID: 7652283315012258064, guid: 6f991bfc0bff0954aa8d696674e310e7,
@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1526125242}
-    characterCount: 11
+    characterCount: 12
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
