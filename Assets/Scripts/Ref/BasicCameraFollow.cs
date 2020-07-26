@@ -1,27 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Cinemachine;
 
 public class BasicCameraFollow : MonoBehaviour 
 {
+    [SerializeField]
+    CinemachineVirtualCamera cam;
 
-	private Vector3 startingPosition;
-	public Transform followTarget;
-	private Vector3 targetPos;
-	public float moveSpeed;
-	
-	void Start()
-	{
-		startingPosition = transform.position;
-	}
+    float AmplitudeGain = 0.5f;
+    float FrequencyGain = 0.5f;
 
-	void Update () 
-	{
-		if(followTarget != null)
-		{
-			targetPos = new Vector3(followTarget.position.x, followTarget.position.y, transform.position.z);
-			Vector3 velocity = (targetPos - transform.position) * moveSpeed;
-			transform.position = Vector3.SmoothDamp (transform.position, targetPos, ref velocity, 1.0f, Time.deltaTime);
-		}
-	}
+    private void Start()
+    {
+        EndShake();
+    }
+
+    public void StartShake()
+    {
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = AmplitudeGain;
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = FrequencyGain;
+    }
+
+    public void EndShake()
+    {
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
+        cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0.0f;
+    }
+
 }
 

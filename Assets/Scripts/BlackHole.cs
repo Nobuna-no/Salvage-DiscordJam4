@@ -9,7 +9,7 @@ public class BlackHole : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy") || collision.gameObject.layer == LayerMask.NameToLayer("Collectible"))
         {
             Vector3 finalPos = transform.position - collision.transform.position;
             finalPos.z = 0;
