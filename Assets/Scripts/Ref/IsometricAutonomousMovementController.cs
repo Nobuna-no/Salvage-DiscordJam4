@@ -17,7 +17,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
 
     private void Awake()
     {
-        rbody = rbody;
+        rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
         BoidsManager.Instance.Boids.Add(gameObject);

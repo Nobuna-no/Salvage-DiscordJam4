@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  safeHeatColor: {r: 1, g: 0, b: 0.46135092, a: 1}
-  overHeatColor: {r: 1, g: 1, b: 1, a: 1}
+  safeHeatColor: {r: 1, g: 0.34117648, b: 0.92478925, a: 1}
+  overHeatColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7586341709355658490
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 7586341710536204759}
   - component: {fileID: 7586341710536204752}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InGameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
