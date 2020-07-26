@@ -140,7 +140,8 @@ public class BoidsManager : MonoBehaviour
             b = Boids[i];
             float distanceSquared = Vector2.SqrMagnitude(b.transform.position - currentBoid.transform.position);
 
-            if (b != currentBoid  && (distanceSquared < m_BoidData.DetectionDistanceSquared))
+			bool distanceOk = distanceSquared < m_BoidData.DetectionDistanceSquared;
+			if (b != currentBoid && distanceOk)
             {
                 out_groupingAcc += new Vector2(b.transform.position.x, b.transform.position.y);
                 out_cohesionAcc += b.GetComponent<Rigidbody2D>().velocity;

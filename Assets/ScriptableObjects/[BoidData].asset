@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: aa8a5cefb2f6f744a8fc9a9f5f91e456, type: 3}
   m_Name: '[BoidData]'
   m_EditorClassIdentifier: Assembly-CSharp::BoidData
   MaxBoidsCount: 50
   BoidSpeed: 10
-  DetectionDistanceSquared: 400
-  SeparationDistanceSquared: 0.2
-  SafetyDistanceSquared: 5
-  GroupingPercentage: 1
+  DetectionDistanceSquared: 25
+  SeparationDistanceSquared: 1
+  SafetyDistanceSquared: 25
+  GroupingPercentage: 5
   SeparationFGameObject: 1
-  CohesionPercentage: 0.5
-  FleeingPredatorPercentage: 30
-  BorderBouncingForce: 10
+  CohesionPercentage: 50
+  FleeingPredatorPercentage: 50
+  BorderBouncingForce: 30
   GoodPlaceAttractionFactor: 10
-  MaxVelocity: 15
+  MaxVelocity: 20
