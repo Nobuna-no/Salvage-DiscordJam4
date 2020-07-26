@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f971fad63404330428cc5918a8ead423, type: 3}
   m_Name: AllLevels
   m_EditorClassIdentifier: 
-  scenes: 01000000
+  scenes: 02000000

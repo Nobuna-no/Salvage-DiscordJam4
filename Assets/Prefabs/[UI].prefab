@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a47f760a7a8dd42ad4c8f8ed099744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endSceneIndex: 2
+  endSceneIndex: 1
   score: {fileID: 11400000, guid: cb05c059d51e8434ba24888f86710fe0, type: 2}
   fade: {fileID: 4398653008992958421}
 --- !u!1 &6677716827365514033

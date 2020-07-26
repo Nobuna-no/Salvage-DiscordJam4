@@ -439,6 +439,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a7c4761d493284aa4ba5ccd92bac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &408795353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5754964309845466371, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5754964308908713094}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a47f760a7a8dd42ad4c8f8ed099744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427874737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3294,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 389090611}
     m_Modifications:
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 408795353}
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780754959095363592, guid: 116f351b1e220ff48a66ee69e9472d6d,
+        type: 3}
+      propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4780754959095363593, guid: 116f351b1e220ff48a66ee69e9472d6d,
         type: 3}
       propertyPath: m_LocalPosition.x
