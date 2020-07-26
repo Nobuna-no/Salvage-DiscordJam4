@@ -17,4 +17,13 @@ public class BlackHole : MonoBehaviour
             collision.GetComponent<Rigidbody2D>().AddForce(finalPos, ForceMode2D.Force);
         }
     }
+
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Collectible"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+    }
 }
