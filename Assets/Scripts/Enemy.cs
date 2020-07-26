@@ -33,14 +33,16 @@ public class Enemy : PoolObject
     void Death()
     {
         BoidsManager.Instance.Boids.Remove(gameObject);
-        Instantiate(Prefab, transform.position, Quaternion.identity);
+        Vector3 newLoc = transform.position;
+        newLoc.z = 0;
+        Instantiate(Prefab, newLoc, Quaternion.identity);
         OnDeath?.Invoke();
         Spawner gao = FindObjectOfType<Spawner>();
         if(gao)
         {
             gao.SpawnAt(gameObject.transform);
         }
-        AudioManager.Instance.PlayHumanDyingRandomAudio(transform.position);
+        AudioManager.Instance.PlayHumanDyingRandomAudio(newLoc);
         //StartCoroutine(DelayBeforeKill_Coroutine());
         Destroy(this.gameObject);
     }
