@@ -3042,6 +3042,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 828827978866346039, guid: d9baa64e933e85c4cb1ba39e8d2ea13e,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.8204432
+      objectReference: {fileID: 0}
+    - target: {fileID: 828827978866346039, guid: d9baa64e933e85c4cb1ba39e8d2ea13e,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.9230332
+      objectReference: {fileID: 0}
+    - target: {fileID: 828827978866346039, guid: d9baa64e933e85c4cb1ba39e8d2ea13e,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9baa64e933e85c4cb1ba39e8d2ea13e, type: 3}
 --- !u!1 &473969724
@@ -3242,6 +3257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1025994699}
+  - {fileID: 1223555460}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3546,6 +3562,50 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1025994698}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1223555459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223555460}
+  - component: {fileID: 1223555461}
+  m_Layer: 0
+  m_Name: InGameUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1223555460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223555459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 659387771}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1223555461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223555459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a47f760a7a8dd42ad4c8f8ed099744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 11400000, guid: cb05c059d51e8434ba24888f86710fe0, type: 2}
 --- !u!1 &1431309397
 GameObject:
   m_ObjectHideFlags: 3

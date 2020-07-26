@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Dung : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class Dung : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Vacuum"))
         {
             sc.Increment();
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
