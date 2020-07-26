@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour
 {
+    public UnityEvent OnHit;
+
     public BulletSO script;
+
+    [SerializeField]
+    private float DelayBeforeDestroy = 2f;
 
     [SerializeField]
     CircleCollider2D collider2d;
@@ -18,7 +25,7 @@ public class Bullet : MonoBehaviour
             life = value;
             if(life <= 0)
             {
-                Destroy(this.gameObject);
+                StartCoroutine(DelayBeforeKill());
             }
         }
     }
@@ -39,10 +46,22 @@ public class Bullet : MonoBehaviour
         {
             Life--;
             collision.gameObject.GetComponent<Enemy>().applyDmg();
+            OnHit?.Invoke();
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             Life = 0;
+            Vector3 location = collision.ClosestPoint(transform.position);
+            Vector3 dir = (location - transform.position);
+            transform.eulerAngles = Vector3.RotateTowards(transform.eulerAngles, dir, 360, 360);
+            OnHit?.Invoke();
         }
+    }
+
+
+    IEnumerator DelayBeforeKill()
+    {
+        yield return new WaitForSeconds(DelayBeforeDestroy);
+        Destroy(this.gameObject);
     }
 }
