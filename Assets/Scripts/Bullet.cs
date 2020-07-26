@@ -47,13 +47,13 @@ public class Bullet : PoolObject
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy") && Life > 0)
         {
             Life--;
             collision.gameObject.GetComponent<Enemy>().applyDmg(script.Dammage);
             OnHit?.Invoke();
         }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") && Life > 0)
         {
             Life = 0;
             Vector3 location = collision.ClosestPoint(transform.position);
