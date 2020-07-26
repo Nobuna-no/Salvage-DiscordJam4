@@ -119,6 +119,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFiringCharge:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: StartShake
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 24a9e732b6fef4b47a17d3d9b1ca2998,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: StartShake
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 87f767dcf362e514c86711815f827d50,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeavyShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: StartShake
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a68e2a2bdbc7b9948b36771d38934fa2,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   WeaponCharge: 0
 --- !u!82 &1471535486
 AudioSource:
@@ -650,7 +695,7 @@ GameObject:
   - component: {fileID: 1717159614193640027}
   - component: {fileID: 2581526742287495310}
   - component: {fileID: 3172465675217466760}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Blackhole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,6 +1056,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: StartShake
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: d8e4209f95761844d8a9ddb4ed6464ff,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: CameraShakeSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnVacumEnd:
     m_PersistentCalls:
       m_Calls:
@@ -1039,6 +1096,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2477175785451420353}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: EndShake
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
