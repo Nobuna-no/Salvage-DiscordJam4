@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Bullet : PoolObject
 {
     public UnityEvent OnHit;
+    public UnityEvent OnKill;
 
     public BulletSO script;
 
@@ -51,7 +52,8 @@ public class Bullet : PoolObject
         {
             Life--;
             collision.gameObject.GetComponent<Enemy>().applyDmg(script.Dammage);
-            OnHit?.Invoke();
+            OnHit?.Invoke(); 
+            OnKill?.Invoke();
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall") && Life > 0)
         {

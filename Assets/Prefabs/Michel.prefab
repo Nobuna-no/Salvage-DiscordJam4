@@ -188,8 +188,8 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5406623740893915694}
-        m_MethodName: PlayRandomSound
+      - m_Target: {fileID: 6895789029232713754}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,9 +256,10 @@ AudioSource:
   m_GameObject: {fileID: 9052873508390397352}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: -7184016195122028640, guid: f5f3a81d643b85b458e2cb8dbef2760a,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1bd81d72a18f1e94d8a982ed2100ad01, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -350,7 +351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9052873508390397352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a818cf4dfacbdc24fbd0d01cc848c5a1, type: 3}
   m_Name: 

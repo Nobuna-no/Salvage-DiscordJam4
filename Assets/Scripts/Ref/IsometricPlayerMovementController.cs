@@ -41,31 +41,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        isoRenderer.AverageMaxSpeed = movementSpeed;
+
         Vector2 direction = new Vector2(Input.GetAxisRaw("RightHorizontal"), Input.GetAxisRaw("RightVertical"));
         direction = direction * AngularSpeed;
-
-        if (direction != Vector2.zero)
-        {
-            if(LastDirection != direction)
-            { 
-                LastDirection = direction;
-                isoRenderer.SetDirection(direction);
-                //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
-            }
-        }
-        else if(MousePosition != Input.mousePosition)
-        {
-            direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-            //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
-            MousePosition = Input.mousePosition;
-            isoRenderer.SetDirection(direction);
-        }
-
-        if(direction != Vector2.zero)
-        {
-            lastWantedDirection = direction;
-        }
-
 
         Vector2 currentPos = rbody.position;
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -75,6 +54,28 @@ public class IsometricPlayerMovementController : MonoBehaviour
         Vector2 movement = inputVector * movementSpeed;
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         rbody.MovePosition(newPos);
+
+        if (direction != Vector2.zero)
+        {
+            if(LastDirection != direction)
+            { 
+                LastDirection = direction;
+                isoRenderer.SetDirection(direction, movement);
+                //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
+            }
+        }
+        else if(MousePosition != Input.mousePosition)
+        {
+            direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+            //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
+            MousePosition = Input.mousePosition;
+            isoRenderer.SetDirection(direction, movement);
+        }
+
+        if(direction != Vector2.zero)
+        {
+            lastWantedDirection = direction;
+        }
     }
 
     public void SwitchWeapon(int WeaponIndex)
