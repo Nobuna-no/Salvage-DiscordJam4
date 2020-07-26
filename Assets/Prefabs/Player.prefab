@@ -119,6 +119,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFiringCharge:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeavyShoot:
+    m_PersistentCalls:
+      m_Calls: []
   WeaponCharge: 0
 --- !u!82 &1471535486
 AudioSource:
