@@ -13654,6 +13654,31 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5754964308257886716, guid: ecc990d03d3897e41a0fe90cc0bb075d,
         type: 3}
       propertyPath: m_Name
