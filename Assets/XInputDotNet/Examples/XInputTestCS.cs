@@ -1,11 +1,11 @@
 using UnityEngine;
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
 using XInputDotNetPure; // Required in C#
 #endif
 
 public class XInputTestCS : MonoBehaviour
 {
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
     GamePadState state;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Cinemachine;
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
 using XInputDotNetPure;
 #endif
 
@@ -10,7 +10,7 @@ public class BasicCameraFollow : MonoBehaviour
     [SerializeField]
     CinemachineVirtualCamera cam;
 
-#if !UNITY_WEBGL    
+#if (UNITY_EDITOR || UNITY_STANDALONE)    
     bool playerIndexSet = false;
     PlayerIndex playerIndex;
     GamePadState state;
@@ -24,7 +24,7 @@ public class BasicCameraFollow : MonoBehaviour
 
     void Update()
     {
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
         if (!playerIndexSet || !prevState.IsConnected)
         {
             for (int i = 0; i < 4; ++i)
@@ -51,7 +51,7 @@ public class BasicCameraFollow : MonoBehaviour
 
         cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = Intensity.AmplitudeGain;
         cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = Intensity.FrequencyGain;
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
         GamePad.SetVibration(playerIndex, Intensity.ControllerIntensity.x, Intensity.ControllerIntensity.y);
 #endif
         if (Intensity.Duration > 0.0f)
@@ -64,7 +64,7 @@ public class BasicCameraFollow : MonoBehaviour
     {
         cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
         cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0.0f;
-#if !UNITY_WEBGL
+#if (UNITY_EDITOR || UNITY_STANDALONE)
         GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
 #endif
     }

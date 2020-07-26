@@ -80,13 +80,13 @@ public class IsometricPlayerMovementController : MonoBehaviour
 
     public void SwitchWeapon(int WeaponIndex)
     {
-        if(WeaponIndex == 0)
+        if(WeaponIndex == 0 && !FireWeapon.enabled)
         {
             FireWeapon.enabled = true;
             Vacuum.enabled = false;
             Vacuum.GetComponent<VacuumWeapon>().EndVacume();
         }
-        else
+        else if(WeaponIndex == 1 && !Vacuum.enabled)
         {
             FireWeapon.enabled = false;
             Vacuum.enabled = true;

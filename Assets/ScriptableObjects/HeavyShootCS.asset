@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dca9362537bb804487ecf2f90695983, type: 3}
   m_Name: HeavyShootCS
   m_EditorClassIdentifier: 
-  AmplitudeGain: 2
+  AmplitudeGain: 3
   FrequencyGain: 0.5
-  Duration: 1
-  ControllerIntensity: {x: 0, y: 1}
+  Duration: 0.25
+  ControllerIntensity: {x: 0, y: 5}

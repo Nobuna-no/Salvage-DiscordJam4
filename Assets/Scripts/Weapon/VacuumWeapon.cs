@@ -11,6 +11,7 @@ public class VacuumWeapon : Weapon
 
     [SerializeField]
     public FiringWeapon fire;
+    public float RecoverySpeed = 2f;
 
     public UnityEvent OnVacumStart;
     public UnityEvent OnVacumEnd;
@@ -51,7 +52,7 @@ public class VacuumWeapon : Weapon
         {
             Vacume(false);
             IsWorking = false;
-            FireRate = Mathf.Min(FireRate + Time.deltaTime, Lastfired);
+            FireRate = Mathf.Min(FireRate + Time.deltaTime * RecoverySpeed, Lastfired);
             if(!m_canVacuum)
             {
                 m_canVacuum = FireRate == Lastfired;
