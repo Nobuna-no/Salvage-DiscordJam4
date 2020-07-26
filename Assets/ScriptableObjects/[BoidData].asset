@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoidData
   MaxBoidsCount: 50
   BoidSpeed: 5
-  DetectionDistanceSquared: 1000
+  DetectionDistanceSquared: 25
   SeparationDistanceSquared: 0.25
   SafetyDistanceSquared: 10
   GroupingPercentage: 0.1
