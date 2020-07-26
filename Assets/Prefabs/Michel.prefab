@@ -201,7 +201,7 @@ MonoBehaviour:
         m_CallState: 2
   DelayBeforeDestroy: 3
   Prefab: {fileID: 4831635838060103233, guid: b1d422534f023994b8efc503145fcaab, type: 3}
-  life: 3
+  life: 1
 --- !u!114 &736363866498006807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,3 +366,4 @@ MonoBehaviour:
   RandomSoundRangeDelayMin: 3
   RandomSoundRangeDelayMax: 10
   Source: {fileID: 6895789029232713754}
+  PlayInfiniteRandomSound: 0
