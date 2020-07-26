@@ -189,7 +189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5406623740893915694}
-        m_MethodName: PlayMusic
+        m_MethodName: PlayRandomSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,6 +199,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  DelayBeforeDestroy: 3
   Prefab: {fileID: 4831635838060103233, guid: b1d422534f023994b8efc503145fcaab, type: 3}
   life: 3
 --- !u!114 &736363866498006807
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9d08247348b3e4aa13734904d5f77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 100
 --- !u!58 &6197534266611142707
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -354,12 +355,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a818cf4dfacbdc24fbd0d01cc848c5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sounds:
+  RandomSound:
+  - {fileID: 8300000, guid: 10b19376b7042d745951caa21bb7562a, type: 3}
   - {fileID: 8300000, guid: ec3821a5545fa81408a8d3d319b15a00, type: 3}
   - {fileID: 8300000, guid: 926b385d173e18d4db598e8ac0f7ba7b, type: 3}
   - {fileID: 8300000, guid: cd82e6ad9f249db4e855534a1c3f6ccc, type: 3}
   - {fileID: 8300000, guid: e50c301453e8ed947bbe9d8b7d9ccb81, type: 3}
   - {fileID: 8300000, guid: 27c053a18d1020d469a677bdb561c422, type: 3}
   - {fileID: 8300000, guid: ca00c51a6830fe342a1c5d1f1d9732d2, type: 3}
-  - {fileID: 8300000, guid: f60869080a3e2474286aefcff41e3911, type: 3}
+  RandomSoundRangeDelayMin: 3
+  RandomSoundRangeDelayMax: 10
   Source: {fileID: 6895789029232713754}

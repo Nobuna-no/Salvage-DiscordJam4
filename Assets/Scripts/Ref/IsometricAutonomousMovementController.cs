@@ -72,5 +72,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             finalPos = finalPos * BoidsManager.Instance.Data.BorderBouncingForce * (bIsFleeing ? 2f : 1f);
             GetComponent<Rigidbody2D>().AddForce(finalPos, ForceMode2D.Force);
         }
+
+        AudioManager.Instance.PlayHumanYellingRandomAudio(transform.position);
     }
 }

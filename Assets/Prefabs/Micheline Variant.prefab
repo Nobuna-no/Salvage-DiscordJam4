@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736363866498006807, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
+        type: 3}
+      propertyPath: movementSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1799530775000997603, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_Controller
@@ -22,41 +27,51 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5406623740893915694, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
+        type: 3}
+      propertyPath: RandomSound.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: f60869080a3e2474286aefcff41e3911, type: 3}
     - target: {fileID: 7078340680517279106, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e2a4adcc579cf174cb7d718007892878,
         type: 3}
+    - target: {fileID: 9052873508390397346, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
+        type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.938
+      value: -4.5599995
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.214
+      value: -0.59000015
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45507812
+      value: 9.544922
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9052873508390397347, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
@@ -91,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 9052873508390397352, guid: 3d29e2d9d11cd4542b5fc68e3856952d,
         type: 3}
       propertyPath: m_Name
-      value: Micheline Variant
+      value: Micheline (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d29e2d9d11cd4542b5fc68e3856952d, type: 3}

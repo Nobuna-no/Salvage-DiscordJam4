@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
 {
     public UnityEvent OnDeath;
 
+
+    [SerializeField]
+    private float DelayBeforeDestroy = 3f;
+    
     [SerializeField]
     Dung Prefab;
 
@@ -38,6 +42,8 @@ public class Enemy : MonoBehaviour
         {
             gao.SpawnAt(gameObject.transform);
         }
+        AudioManager.Instance.PlayHumanDyingRandomAudio(transform.position);
+        //StartCoroutine(DelayBeforeKill_Coroutine());
         Destroy(this.gameObject);
     }
 
@@ -51,4 +57,11 @@ public class Enemy : MonoBehaviour
         Life = 0;
     }
 
+    //IEnumerator DelayBeforeKill_Coroutine()
+    //{
+    //    GetComponent<Rigidbody2D>().simulated = false;
+    //    GetComponentInChildren<Renderer>().enabled = false;
+    //    yield return new WaitForSeconds(DelayBeforeDestroy);
+    //    Destroy(this.gameObject);
+    //}
 }
