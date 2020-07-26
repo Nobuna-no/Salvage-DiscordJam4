@@ -15,13 +15,9 @@ public class BasicCameraFollow : MonoBehaviour
     GamePadState prevState;
     bool shake = false;
 
-    [SerializeField]
-    EnemyPool pool;
-
     private void Start()
     {
         EndShake();
-        pool.OnAllEnemyDisabled.AddListener(EndShake);
     }
 
     void Update()
