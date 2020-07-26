@@ -92,7 +92,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<Renderer>().sortingOrder = -(int) (transform.position.y* 100);
+        //GetComponent<Renderer>().sortingOrder = -(int) (transform.position.y* 100);
     }
 
 }
