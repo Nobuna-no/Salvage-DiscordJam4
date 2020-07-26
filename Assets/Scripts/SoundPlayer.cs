@@ -6,6 +6,11 @@ public class SoundPlayer : MonoBehaviour
 {
     [SerializeField]
     List<AudioClip> Sounds;
+    [SerializeField]
+    private float RandomSoundRangeDelayMin = 3f;
+    [SerializeField]
+    private float RandomSoundRangeDelayMax = 10f;
+
 
     [SerializeField]
     AudioSource Source;
@@ -18,5 +23,19 @@ public class SoundPlayer : MonoBehaviour
     public void PlayOneMusic()
     {
         Source?.PlayOneShot(Sounds[0]);
+    }
+
+
+    public void PlayLoopSound(AudioClip sound)
+    {
+        Source.clip = sound;
+        Source.loop = true;
+        Source?.Play();
+    }
+
+    public void StopLoopSound()
+    {
+        Source.loop = false;
+        Source?.Stop();
     }
 }
