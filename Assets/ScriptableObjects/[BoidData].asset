@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: '[BoidData]'
   m_EditorClassIdentifier: Assembly-CSharp::BoidData
   MaxBoidsCount: 50
-  BoidSpeed: 10
-  DetectionDistanceSquared: 25
-  SeparationDistanceSquared: 1
-  SafetyDistanceSquared: 25
-  GroupingPercentage: 5
-  SeparationFGameObject: 1
-  CohesionPercentage: 50
+  BoidSpeed: 5
+  DetectionDistanceSquared: 1000
+  SeparationDistanceSquared: 0.25
+  SafetyDistanceSquared: 10
+  GroupingPercentage: 0.1
+  SeparationFGameObject: 10
+  CohesionPercentage: 0
   FleeingPredatorPercentage: 50
-  BorderBouncingForce: 30
-  GoodPlaceAttractionFactor: 10
-  MaxVelocity: 20
+  BorderBouncingForce: 50
+  GoodPlaceAttractionFactor: 5
+  MaxVelocity: 3

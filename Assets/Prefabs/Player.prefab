@@ -423,8 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireWeapon: {fileID: 107112518}
   Vacuum: {fileID: 5235334721741559939}
-  normalMovementSpeed: 5
-  vacuumMovementSpeed: 2
+  normalMovementSpeed: 2
+  vacuumMovementSpeed: 1.5
   AngularSpeed: 1
 --- !u!50 &1877561832342557379
 Rigidbody2D:

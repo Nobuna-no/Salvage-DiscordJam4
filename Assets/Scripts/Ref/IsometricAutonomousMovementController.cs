@@ -47,7 +47,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             bIsFleeing = false;
         }
 
-        Vector2 forceSum = groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
+        Vector2 forceSum = new Vector2(Time.deltaTime, 0) + groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
         rbody.AddForce(forceSum * BoidsManager.Instance.Data.BoidSpeed, ForceMode2D.Force);
         isoRenderer.SetDirection(rbody.velocity, rbody.velocity);
         rbody.velocity = Vector2.ClampMagnitude(rbody.velocity, BoidsManager.Instance.Data.MaxVelocity);
@@ -62,6 +62,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             Vector3 finalPos = pos - transform.position;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.GoodPlaceAttractionFactor;
+            finalPos = Vector2.ClampMagnitude(finalPos, BoidsManager.Instance.Data.MaxVelocity);
             rbody.AddForce(finalPos, ForceMode2D.Force);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
@@ -70,6 +71,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             Vector3 finalPos = transform.position - pos;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.BorderBouncingForce * (bIsFleeing ? 2f : 1f);
+            finalPos = Vector2.ClampMagnitude(finalPos, BoidsManager.Instance.Data.MaxVelocity);
             rbody.AddForce(finalPos, ForceMode2D.Force);
         }
 
