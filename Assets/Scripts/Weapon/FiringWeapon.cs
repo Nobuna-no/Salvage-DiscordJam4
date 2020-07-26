@@ -8,7 +8,7 @@ public class FiringWeapon : Weapon
 
     [SerializeField]
     public VacuumWeapon Vacuum;
-
+    public Vector3 SpawnBulletOffset = new Vector3(0, 0, -1);
     public UnityEvent OnFiringStart;
 
     // Update is called once per frame
@@ -28,6 +28,6 @@ public class FiringWeapon : Weapon
         IsoController.SwitchWeapon(0);
         OnFiringStart?.Invoke();
 
-		BulletPool.Instance.Instantiate(AmmoType, IsoController.transform.position, IsometricPlayerMovementController.lastWantedDirection.normalized);
+		BulletPool.Instance.Instantiate(AmmoType, IsoController.transform.position + SpawnBulletOffset, IsometricPlayerMovementController.lastWantedDirection.normalized);
     }
 }

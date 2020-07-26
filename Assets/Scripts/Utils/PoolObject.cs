@@ -40,12 +40,12 @@ public class PoolObject : MonoBehaviour
 		}
 	}
 
-	private void OnEnable()
+	protected virtual void OnEnable()
 	{
 		onEnable?.Invoke();
 	}
 
-	private void OnDisable()
+	protected virtual void OnDisable()
 	{
 		onDisable?.Invoke();
 	}
