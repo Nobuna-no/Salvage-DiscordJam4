@@ -13,6 +13,7 @@ public class FiringWeapon : Weapon
     public UnityEvent OnShoot;
     public UnityEvent OnHeavyShoot;
 
+    [SerializeField]
     private float WeaponChargeMax = 1.0f;
     [HideInInspector]
     public float WeaponCharge;

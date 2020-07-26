@@ -164,6 +164,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  WeaponChargeMax: 0.5
   WeaponCharge: 0
 --- !u!82 &1471535486
 AudioSource:
@@ -1019,6 +1020,7 @@ MonoBehaviour:
       m_Calls: []
   circle: {fileID: 4080120482542898930}
   fire: {fileID: 1933740113549479208}
+  RecoverySpeed: 2
   OnVacumStart:
     m_PersistentCalls:
       m_Calls:
