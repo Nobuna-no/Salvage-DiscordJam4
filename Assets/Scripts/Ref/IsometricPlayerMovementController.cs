@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class MyIntEvent : UnityEvent<int>
+{
+}
 
 public class IsometricPlayerMovementController : MonoBehaviour
 {
+    [SerializeField]
+    SpriteRenderer FireWeapon;
+    [SerializeField]
+    SpriteRenderer Vacuum;
 
+    public static Vector2 lastWantedDirection = Vector2.zero;
     public float movementSpeed = 1f;
     public float AngularSpeed = 1f;
     IsometricCharacterRenderer isoRenderer;
@@ -20,15 +30,15 @@ public class IsometricPlayerMovementController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
+
+        BoidsManager.Instance.Predators.Add(gameObject);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         Vector2 direction = new Vector2(Input.GetAxisRaw("RightHorizontal"), Input.GetAxisRaw("RightVertical"));
-        Vector2 inputRotationVector = Vector2.ClampMagnitude(direction, 1);
-        direction = inputRotationVector * AngularSpeed;
+        direction = direction * AngularSpeed;
 
         if (direction != Vector2.zero)
         {
@@ -36,14 +46,20 @@ public class IsometricPlayerMovementController : MonoBehaviour
             { 
                 LastDirection = direction;
                 isoRenderer.SetDirection(direction);
-                OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
+                //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(LastDirection), Time.deltaTime * AngularSpeed);
             }
         }
         else if(MousePosition != Input.mousePosition)
         {
             direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-            OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
+            //OwnTransform.rotation = Quaternion.Lerp(OwnTransform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * AngularSpeed);
             MousePosition = Input.mousePosition;
+            isoRenderer.SetDirection(direction);
+        }
+
+        if(direction != Vector2.zero)
+        {
+            lastWantedDirection = direction;
         }
 
 
@@ -55,5 +71,20 @@ public class IsometricPlayerMovementController : MonoBehaviour
         Vector2 movement = inputVector * movementSpeed;
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         rbody.MovePosition(newPos);
+    }
+
+    public void SwitchWeapon(int WeaponIndex)
+    {
+        if(WeaponIndex == 0)
+        {
+            FireWeapon.enabled = true;
+            Vacuum.enabled = false;
+            Vacuum.GetComponent<VacuumWeapon>().EndVacume();
+        }
+        else
+        {
+            FireWeapon.enabled = false;
+            Vacuum.enabled = true;
+        }
     }
 }

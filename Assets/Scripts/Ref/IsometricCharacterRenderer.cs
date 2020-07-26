@@ -6,8 +6,9 @@ using UnityEngine;
 public class IsometricCharacterRenderer : MonoBehaviour
 {
 
-    public static readonly string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
-    public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
+    public static readonly string[] staticDirections = { /*"Static N",*/ "Static NW", /*"Static W",*/ "Static SW", /*"Static S",*/ "Static SE", /*"Static E",*/ "Static NE" };
+    public static readonly string[] runDirections = { /*"Static N",*/ "Static NW", /*"Static W",*/ "Static SW", /*"Static S",*/ "Static SE", /*"Static E",*/ "Static NE" };
+    //public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
 
     Animator animator;
     int lastDirection;
@@ -39,7 +40,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
             //use DirectionToIndex to get the index of the slice from the direction vector
             //save the answer to lastDirection
             directionArray = runDirections;
-            lastDirection = DirectionToIndex(direction, 8);
+            lastDirection = DirectionToIndex(direction, 4);
         }
 
         //tell the animator to play the requested state
@@ -63,7 +64,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
         //this will return the angle between dir and North.
         float angle = Vector2.SignedAngle(Vector2.up, normDir);
         //add the halfslice offset
-        angle += halfstep;
+        //angle += halfstep;
         //if angle is negative, then let's make it positive by adding 360 to wrap it around.
         if (angle < 0){
             angle += 360;
@@ -87,6 +88,11 @@ public class IsometricCharacterRenderer : MonoBehaviour
         }
         //we're done!
         return hashArray;
+    }
+
+    private void Update()
+    {
+        GetComponent<Renderer>().sortingOrder = -(int) (transform.position.y* 100);
     }
 
 }
