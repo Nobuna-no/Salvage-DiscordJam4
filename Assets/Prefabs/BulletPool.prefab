@@ -46,3 +46,4 @@ MonoBehaviour:
   m_folder: {fileID: 3622184060127866135}
   m_prefabs:
   - {fileID: 4396131970811870748, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3, type: 3}
+  - {fileID: 4396131970811870748, guid: 28ff427d1ecafdc4bae0d43794a15d18, type: 3}

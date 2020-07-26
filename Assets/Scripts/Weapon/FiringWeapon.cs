@@ -3,27 +3,41 @@ using UnityEngine.Events;
 
 public class FiringWeapon : Weapon
 {
-    [SerializeField]
-    public int AmmoType;
 
     [SerializeField]
     public VacuumWeapon Vacuum;
     public Vector3 SpawnBulletOffset = new Vector3(0, 0, -1);
     public UnityEvent OnFiringStart;
 
+    private float WeaponChargeMax = 1.0f;
+    [HideInInspector]
+    public float WeaponCharge;
+
     // Update is called once per frame
     protected override void Update() 
     {
         base.Update();
 
-        if (Input.GetAxis("Fire1") == 1 && Time.time > Lastfired && !Vacuum.IsWorking)
+        if (Input.GetAxis("Fire1") == 1 && !Vacuum.IsWorking)
         {
-            Lastfired = FireRate + Time.time;
-            Shoot();
+            WeaponCharge += Time.deltaTime;
+        }
+
+        if(Input.GetAxis("Fire1") == 0 && !Vacuum.IsWorking)
+        {
+            if (WeaponCharge >= WeaponChargeMax)
+            {
+                Shoot(1);
+            }
+            else if(WeaponCharge > 0 && WeaponCharge < WeaponChargeMax)
+            {
+                Shoot(0);
+            }
+            WeaponCharge = 0.0f;
         }
     }
 
-    public void Shoot()
+    public void Shoot(int AmmoType)
     {
         IsoController.SwitchWeapon(0);
         OnFiringStart?.Invoke();
