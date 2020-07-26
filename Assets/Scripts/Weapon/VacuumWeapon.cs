@@ -14,6 +14,7 @@ public class VacuumWeapon : Weapon
 
     public UnityEvent OnVacumStart;
     public UnityEvent OnVacumEnd;
+    public UnityEvent OnKill;
     public UnityEvent OnVacumeOverHeatMax;
     public UnityEvent OnVacumeOverHeatEnd;
 
@@ -68,6 +69,7 @@ public class VacuumWeapon : Weapon
         if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().Kill();
+            OnKill?.Invoke();
         }
     }
 

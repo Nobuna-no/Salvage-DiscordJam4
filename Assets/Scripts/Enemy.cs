@@ -34,7 +34,7 @@ public class Enemy : PoolObject
     {
         BoidsManager.Instance.Boids.Remove(gameObject);
         Instantiate(Prefab, transform.position, Quaternion.identity);
-        OnDeath.Invoke();
+        OnDeath?.Invoke();
         Spawner gao = FindObjectOfType<Spawner>();
         if(gao)
         {
