@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
-public class Bullet : MonoBehaviour
+public class Bullet : PoolObject
 {
     public UnityEvent OnHit;
 
@@ -63,6 +61,6 @@ public class Bullet : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         yield return new WaitForSeconds(DelayBeforeDestroy);
-        Destroy(this.gameObject);
+		IsActive = false;
     }
 }
