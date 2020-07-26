@@ -8,6 +8,9 @@ public class FiringWeapon : Weapon
     [SerializeField]
     public Bullet AmmoType;
 
+    [SerializeField]
+    public VacuumWeapon Vacuum;
+
     public UnityEvent OnFiringStart;
 
     // Update is called once per frame
@@ -15,7 +18,7 @@ public class FiringWeapon : Weapon
     {
         base.Update();
 
-        if (Input.GetAxis("Fire1") == 1 && Time.time > Lastfired)
+        if (Input.GetAxis("Fire1") == 1 && Time.time > Lastfired && !Vacuum.IsWorking)
         {
             Lastfired = fireRate + Time.time;
             Shoot();

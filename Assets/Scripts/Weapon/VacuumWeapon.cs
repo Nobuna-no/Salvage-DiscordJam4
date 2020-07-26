@@ -13,7 +13,8 @@ public class VacuumWeapon : Weapon
     public UnityEvent OnVacumeOverHeatMax;
     public UnityEvent OnVacumeOverHeatEnd;
 
-    bool canVacume = true;
+    bool m_canVacuum = true;
+    public bool IsWorking = false;
 
     private void Start()
     {
@@ -25,28 +26,31 @@ public class VacuumWeapon : Weapon
     {
         base.Update();
 
-        if (Input.GetAxis("collect") == 1 && canVacume)
+        if (Input.GetAxis("collect") == 1 && m_canVacuum)
         {
             if(fireRate > 0)
             {
                 Vacume(true);
+                IsWorking = true;
                 fireRate -= Time.deltaTime;
             }
             else
             {
                 OnVacumeOverHeatMax?.Invoke();
                 Vacume(false);
-                canVacume = false;
+                IsWorking = false;
+                m_canVacuum = false;
             }
         }
-        else if(!canVacume || Input.GetAxis("collect") == 0)
+        else if(!m_canVacuum || Input.GetAxis("collect") == 0)
         {
             Vacume(false);
+            IsWorking = false;
             fireRate = Mathf.Min(fireRate + Time.deltaTime, Lastfired);
-            if(!canVacume)
-            { 
-                canVacume = fireRate == Lastfired;
-                if(canVacume)
+            if(!m_canVacuum)
+            {
+                m_canVacuum = fireRate == Lastfired;
+                if(m_canVacuum)
                 {
                     OnVacumeOverHeatEnd?.Invoke();
                 }
