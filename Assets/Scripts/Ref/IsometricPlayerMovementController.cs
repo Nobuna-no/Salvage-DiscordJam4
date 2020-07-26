@@ -15,7 +15,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
     SpriteRenderer Vacuum;
 
     public static Vector2 lastWantedDirection = Vector2.zero;
-    public float movementSpeed = 1f;
+
+    float movementSpeed;
+    public float normalMovementSpeed = 1f;
+    public float vacuumMovementSpeed = .5f;
     public float AngularSpeed = 1f;
     IsometricCharacterRenderer isoRenderer;
 
@@ -32,6 +35,7 @@ public class IsometricPlayerMovementController : MonoBehaviour
         OwnTransform = transform;
 
         BoidsManager.Instance.Predators.Add(gameObject);
+        movementSpeed = normalMovementSpeed;
     }
 
     // Update is called once per frame
@@ -86,5 +90,10 @@ public class IsometricPlayerMovementController : MonoBehaviour
             FireWeapon.enabled = false;
             Vacuum.enabled = true;
         }
+    }
+
+    public void SlowDown(bool value)
+    {
+        movementSpeed = value ? vacuumMovementSpeed : normalMovementSpeed;
     }
 }

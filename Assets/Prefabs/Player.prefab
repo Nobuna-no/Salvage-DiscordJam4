@@ -101,6 +101,7 @@ MonoBehaviour:
   TargetOffsetFactor: -50
   AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
     type: 3}
+  Vacuum: {fileID: 0}
   OnFiringStart:
     m_PersistentCalls:
       m_Calls: []
@@ -264,7 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FireWeapon: {fileID: 107112518}
   Vacuum: {fileID: 5235334721741559939}
-  movementSpeed: 5
+  normalMovementSpeed: 5
+  vacuumMovementSpeed: 2
   AngularSpeed: 1
 --- !u!50 &1877561832342557379
 Rigidbody2D:
@@ -563,3 +565,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  IsWorking: 0
