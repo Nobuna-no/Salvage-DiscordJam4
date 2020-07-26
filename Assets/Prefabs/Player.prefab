@@ -101,7 +101,7 @@ MonoBehaviour:
   TargetOffsetFactor: -50
   AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
     type: 3}
-  Vacuum: {fileID: 0}
+  Vacuum: {fileID: 194436949578828840}
   OnFiringStart:
     m_PersistentCalls:
       m_Calls: []
@@ -486,7 +486,7 @@ SpriteRenderer:
   m_SortingLayerID: -1379475309
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 101120ff7167d794785e110deb052c01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8d6ac4cccdfc6c4faac33f0e4e83498, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -525,19 +525,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a7c4761d493284aa4ba5ccd92bac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 5
   IsoController: {fileID: 1877561832342557391}
   weaponDistanceFromPlayer: 0.3
   bonusDegree: 60
   TargetOffsetFactor: -50
   circle: {fileID: 4080120482542898930}
   OnVacumStart:
-    m_PersistentCalls:
-      m_Calls: []
-  OnVacumEnd:
-    m_PersistentCalls:
-      m_Calls: []
-  OnVacumeOverHeatMax:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -551,7 +545,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnVacumeOverHeatEnd:
+  OnVacumEnd:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
@@ -565,4 +559,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnVacumeOverHeatMax:
+    m_PersistentCalls:
+      m_Calls: []
+  OnVacumeOverHeatEnd:
+    m_PersistentCalls:
+      m_Calls: []
   IsWorking: 0
