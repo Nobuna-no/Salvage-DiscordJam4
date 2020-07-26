@@ -79,9 +79,11 @@ public class VacuumWeapon : Weapon
             {
                 IsoController.SwitchWeapon(1);
                 OnVacumStart?.Invoke();
+                IsoController.SlowDown(value);
             }
             else
             {
+                IsoController.SlowDown(value);
                 OnVacumEnd?.Invoke();
             }
         }
