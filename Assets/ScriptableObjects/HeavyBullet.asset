@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c60093eb58dfc946b6b5dc2f830b267, type: 3}
   m_Name: HeavyBullet
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManagerScriptableObject
-  Dammage: 1
+  Dammage: 3
   Speed: 20
-  Life: 1
+  Life: 10
   Radius: 0.3
