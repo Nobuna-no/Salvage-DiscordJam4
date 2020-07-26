@@ -8,6 +8,10 @@ public class VacuumWeapon : Weapon
     [SerializeField]
     CircleCollider2D circle;
 
+
+    [SerializeField]
+    public FiringWeapon fire;
+
     public UnityEvent OnVacumStart;
     public UnityEvent OnVacumEnd;
     public UnityEvent OnVacumeOverHeatMax;
@@ -26,7 +30,7 @@ public class VacuumWeapon : Weapon
     {
         base.Update();
 
-        if (Input.GetAxis("collect") == 1 && m_canVacuum)
+        if (Input.GetAxis("collect") == 1 && m_canVacuum && fire.WeaponCharge == 0.0f)
         {
             if(FireRate > 0)
             {

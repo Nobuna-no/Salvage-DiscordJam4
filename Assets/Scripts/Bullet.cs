@@ -35,7 +35,9 @@ public class Bullet : PoolObject
     protected override void OnEnable()
     {
         base.OnEnable();
+        Life = script.Life;
         GetComponent<Renderer>().enabled = true;
+        GetComponent<Rigidbody2D>().simulated = true;
     }
 
     public void SetRadius(float value)
@@ -48,7 +50,7 @@ public class Bullet : PoolObject
         if (!collision.isTrigger && collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Life--;
-            collision.gameObject.GetComponent<Enemy>().applyDmg();
+            collision.gameObject.GetComponent<Enemy>().applyDmg(script.Dammage);
             OnHit?.Invoke();
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
@@ -65,6 +67,7 @@ public class Bullet : PoolObject
     IEnumerator DelayBeforeKill()
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Renderer>().enabled = false;
         yield return new WaitForSeconds(DelayBeforeDestroy);
 		IsActive = false;

@@ -47,9 +47,9 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    public void applyDmg()
+    public void applyDmg(int dmg)
     {
-        Life--;
+        Life -= dmg;
     }
 
     public void Kill()
