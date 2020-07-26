@@ -11,15 +11,28 @@ public class InGameUI : MonoBehaviour
 	[SerializeField] TextMeshProUGUI introText = null;
 	[SerializeField] string[] introTexts = null;
 	[SerializeField] float timePerLine = 1.0f;
-	
-	private void Awake()
+	[SerializeField] GameObject PauseMenu;
+
+    private void Awake()
 	{
 		score.Reset();
 		StartCoroutine(Intro(PlayerData.FirstGame));
 		PlayerData.SetFirstGame();
 	}
-	
-	public void EndGame()
+
+    private void Update()
+    {
+        if(Input.GetAxis("Pause") == 1)
+        {
+            PauseMenu.SetActive(true);
+        }
+        else
+        {
+            PauseMenu.SetActive(false);
+        }
+    }
+
+    public void EndGame()
 	{
 		StartCoroutine(Outro());
 	}
