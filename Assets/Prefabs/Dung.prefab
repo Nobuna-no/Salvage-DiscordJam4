@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sc: {fileID: 11400000, guid: cb05c059d51e8434ba24888f86710fe0, type: 2}
-  TimeToAbsorb: 1.5
+  TimeToAbsorb: 0.75
 --- !u!58 &4831635838060103232
 CircleCollider2D:
   m_ObjectHideFlags: 0

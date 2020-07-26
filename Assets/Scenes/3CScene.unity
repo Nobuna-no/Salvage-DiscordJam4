@@ -484,6 +484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2477175785451420353, guid: fb562ba1cdec17b41827c946e96b07ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb562ba1cdec17b41827c946e96b07ce, type: 3}
 --- !u!4 &399746030 stripped
@@ -13647,6 +13652,31 @@ PrefabInstance:
     - target: {fileID: 2780308781521102773, guid: ecc990d03d3897e41a0fe90cc0bb075d,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814884857067385943, guid: ecc990d03d3897e41a0fe90cc0bb075d,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5754964308257886716, guid: ecc990d03d3897e41a0fe90cc0bb075d,
