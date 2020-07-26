@@ -32,6 +32,11 @@ public class Bullet : PoolObject
     {
         Life = script.Life;
     }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        GetComponent<Renderer>().enabled = true;
+    }
 
     public void SetRadius(float value)
     {
@@ -60,6 +65,7 @@ public class Bullet : PoolObject
     IEnumerator DelayBeforeKill()
     {
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Renderer>().enabled = false;
         yield return new WaitForSeconds(DelayBeforeDestroy);
 		IsActive = false;
     }

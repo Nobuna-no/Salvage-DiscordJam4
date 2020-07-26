@@ -17,7 +17,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
 
     private void Awake()
     {
-        rbody = GetComponent<Rigidbody2D>();
+        rbody = rbody;
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
         BoidsManager.Instance.Boids.Add(gameObject);
@@ -48,9 +48,9 @@ public class IsometricAutonomousMovementController : MonoBehaviour
         }
 
         Vector2 forceSum = groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
-        GetComponent<Rigidbody2D>().AddForce(forceSum * BoidsManager.Instance.Data.BoidSpeed, ForceMode2D.Force);
-        isoRenderer.SetDirection(GetComponent<Rigidbody2D>().velocity);
-        GetComponent<Rigidbody2D>().velocity = Vector2.ClampMagnitude(GetComponent<Rigidbody2D>().velocity, BoidsManager.Instance.Data.MaxVelocity);
+        rbody.AddForce(forceSum * BoidsManager.Instance.Data.BoidSpeed, ForceMode2D.Force);
+        isoRenderer.SetDirection(rbody.velocity);
+        rbody.velocity = Vector2.ClampMagnitude(rbody.velocity, BoidsManager.Instance.Data.MaxVelocity);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -62,7 +62,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             Vector3 finalPos = pos - transform.position;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.GoodPlaceAttractionFactor;
-            GetComponent<Rigidbody2D>().AddForce(finalPos, ForceMode2D.Force);
+            rbody.AddForce(finalPos, ForceMode2D.Force);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
@@ -70,7 +70,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             Vector3 finalPos = transform.position - pos;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.BorderBouncingForce * (bIsFleeing ? 2f : 1f);
-            GetComponent<Rigidbody2D>().AddForce(finalPos, ForceMode2D.Force);
+            rbody.AddForce(finalPos, ForceMode2D.Force);
         }
 
         AudioManager.Instance.PlayHumanYellingRandomAudio(transform.position);

@@ -102,6 +102,7 @@ MonoBehaviour:
   TargetOffsetFactor: -50
   AmmoType: 0
   Vacuum: {fileID: 194436949578828840}
+  SpawnBulletOffset: {x: 0, y: 0, z: -1}
   OnFiringStart:
     m_PersistentCalls:
       m_Calls:
@@ -923,12 +924,12 @@ PrefabInstance:
     - target: {fileID: 487862704208316259, guid: 046558b4e6134314e9702d48ae15724d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 487862704208316259, guid: 046558b4e6134314e9702d48ae15724d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 487862704208316259, guid: 046558b4e6134314e9702d48ae15724d,
         type: 3}
