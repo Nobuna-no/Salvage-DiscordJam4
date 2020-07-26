@@ -7,32 +7,35 @@ public class IsometricCharacterRenderer : MonoBehaviour
 {
 
     public static readonly string[] staticDirections = { /*"Static N",*/ "Static NW", /*"Static W",*/ "Static SW", /*"Static S",*/ "Static SE", /*"Static E",*/ "Static NE" };
-    public static readonly string[] runDirections = { /*"Static N",*/ "Static NW", /*"Static W",*/ "Static SW", /*"Static S",*/ "Static SE", /*"Static E",*/ "Static NE" };
-    //public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
+    public static readonly string[] runDirections = {"Run NW", "Run SW", "Run SE", "Run NE"};
 
     Animator animator;
     int lastDirection;
 
     Vector3 LastDirection;
 
+    public float AverageMaxSpeed { get; set; }
+
     private void Awake()
     {
         //cache the animator component
         animator = GetComponent<Animator>();
+        AverageMaxSpeed = 1;
     }
 
 
-    public void SetDirection(Vector2 direction)
+    public void SetDirection(Vector2 direction, Vector2 velocity)
     {
         //use the Run states by default
         string[] directionArray = null;
 
         //measure the magnitude of the input.
-        if (direction.magnitude < .01f)
+        if (velocity.magnitude < .01f)
         {
             //if we are basically standing still, we'll use the Static states
             //we won't be able to calculate a direction if the user isn't pressing one, anyway!
             directionArray = staticDirections;
+            lastDirection = DirectionToIndex(direction, 4);
         }
         else
         {
@@ -45,6 +48,8 @@ public class IsometricCharacterRenderer : MonoBehaviour
 
         //tell the animator to play the requested state
         animator.Play(directionArray[lastDirection]);
+
+        //animator.speed = velocity.sqrMagnitude / (AverageMaxSpeed * AverageMaxSpeed);
     }
 
     //helper functions

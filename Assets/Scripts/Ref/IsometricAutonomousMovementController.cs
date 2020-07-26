@@ -21,6 +21,8 @@ public class IsometricAutonomousMovementController : MonoBehaviour
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         OwnTransform = transform;
         BoidsManager.Instance.Boids.Add(gameObject);
+
+        isoRenderer.AverageMaxSpeed = BoidsManager.Instance.Data.MaxVelocity;
     }
 
     bool bIsFleeing = false;
@@ -49,7 +51,7 @@ public class IsometricAutonomousMovementController : MonoBehaviour
 
         Vector2 forceSum = groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
         rbody.AddForce(forceSum * BoidsManager.Instance.Data.BoidSpeed, ForceMode2D.Force);
-        isoRenderer.SetDirection(rbody.velocity);
+        isoRenderer.SetDirection(rbody.velocity, rbody.velocity);
         rbody.velocity = Vector2.ClampMagnitude(rbody.velocity, BoidsManager.Instance.Data.MaxVelocity);
     }
 
