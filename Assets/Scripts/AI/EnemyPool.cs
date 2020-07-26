@@ -2,8 +2,8 @@
 
 public class EnemyPool : Pool
 {
-	[SerializeField] private int initialCount;
-	[SerializeField] private Transform spawnPointsFolder;
+	[SerializeField] private int initialCount = 0;
+	[SerializeField] private Transform spawnPointsFolder = null;
 
 	private void Awake()
 	{
@@ -14,7 +14,7 @@ public class EnemyPool : Pool
 			PoolSpawnRadius spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 			Vector2 circlePos = Random.insideUnitCircle * spawnPoint.Radius;
 			Vector3 spawnPos = new Vector3(circlePos.x, circlePos.y, 0.0f) + spawnPoint.transform.position;
-			AddObject(Random.Range(0, m_prefabs.Length), spawnPos);
+			SpawnObject(Random.Range(0, m_prefabs.Length), spawnPos);
 		}
 	}
 }

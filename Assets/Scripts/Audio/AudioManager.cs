@@ -63,8 +63,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioSource PlayerAudioSource;
     [SerializeField]
-    private AudioMixerGroup VoiceGroup;
-    [SerializeField]
     private SchedulingEvents Events;
 
     [Header("AUDIO- Human")]

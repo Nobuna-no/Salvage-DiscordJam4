@@ -27,12 +27,12 @@ public abstract class Pool : MonoBehaviour
 
 		for (int i = 0; i < m_pool.Count; ++i)
 		{
-			PoolObject crtObstacle = m_pool[i];
-			if (crtObstacle == null || crtObstacle.PrefabIndex != prefabIndex || crtObstacle.IsActive)
+			PoolObject crtObj = m_pool[i];
+			if (crtObj == null || crtObj.PrefabIndex != prefabIndex || crtObj.IsActive)
 				continue;
 
-			crtObstacle.Position = position;
-			crtObstacle.IsActive = true;
+			crtObj.Position = position;
+			crtObj.IsActive = true;
 			return true;
 		}
 
