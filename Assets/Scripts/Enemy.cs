@@ -46,4 +46,9 @@ public class Enemy : MonoBehaviour
         Life--;
     }
 
+    public void Kill()
+    {
+        Life = 0;
+    }
+
 }

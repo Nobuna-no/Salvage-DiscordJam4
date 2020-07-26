@@ -7,9 +7,9 @@ public class Dung : MonoBehaviour
     [SerializeField]
     Score sc;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Vacuum"))
         {
             sc.Increment();
             Destroy(this.gameObject);
