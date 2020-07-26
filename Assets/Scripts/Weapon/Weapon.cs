@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class FireRateEvent : UnityEvent<float>
+{
+}
 
 public class Weapon : MonoBehaviour
 {
@@ -10,7 +13,21 @@ public class Weapon : MonoBehaviour
    protected float Lastfired;
 
     [SerializeField]
-    protected float fireRate = 1.0f;
+    protected float maxFireRate = 1.0f;
+
+    private float fireRate = 1.0f;
+	public float FireRate
+	{
+		get => fireRate;
+		protected set
+		{
+			if (fireRate == value)
+				return;
+
+			fireRate = value;
+			OnFireRateChanged?.Invoke(fireRate / maxFireRate);
+		}
+	}
 
     [SerializeField]
     protected IsometricPlayerMovementController IsoController;
@@ -23,8 +40,14 @@ public class Weapon : MonoBehaviour
     [SerializeField, Tooltip("Use this to offset the object slightly in front or behind the Target object")]
     private int TargetOffsetFactor = -50;
 
+	public FireRateEvent OnFireRateChanged = new FireRateEvent();
 
-    protected virtual void Update()
+	protected virtual void Awake()
+	{
+		FireRate = maxFireRate;
+	}
+
+	protected virtual void Update()
     {
         Vector2 normalizedDirection = IsometricPlayerMovementController.lastWantedDirection.normalized;
         transform.position = IsoController.transform.position + weaponDistanceFromPlayer * new Vector3(normalizedDirection.x, normalizedDirection.y);

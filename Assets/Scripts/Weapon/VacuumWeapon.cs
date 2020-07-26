@@ -18,7 +18,7 @@ public class VacuumWeapon : Weapon
 
     private void Start()
     {
-        Lastfired = fireRate;
+        Lastfired = maxFireRate;
     }
 
     // Update is called once per frame
@@ -28,11 +28,11 @@ public class VacuumWeapon : Weapon
 
         if (Input.GetAxis("collect") == 1 && m_canVacuum)
         {
-            if(fireRate > 0)
+            if(FireRate > 0)
             {
                 Vacume(true);
                 IsWorking = true;
-                fireRate -= Time.deltaTime;
+                FireRate -= Time.deltaTime;
             }
             else
             {
@@ -46,10 +46,10 @@ public class VacuumWeapon : Weapon
         {
             Vacume(false);
             IsWorking = false;
-            fireRate = Mathf.Min(fireRate + Time.deltaTime, Lastfired);
+            FireRate = Mathf.Min(FireRate + Time.deltaTime, Lastfired);
             if(!m_canVacuum)
             {
-                m_canVacuum = fireRate == Lastfired;
+                m_canVacuum = FireRate == Lastfired;
                 if(m_canVacuum)
                 {
                     OnVacumeOverHeatEnd?.Invoke();

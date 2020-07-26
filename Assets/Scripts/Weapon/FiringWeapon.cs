@@ -18,7 +18,7 @@ public class FiringWeapon : Weapon
 
         if (Input.GetAxis("Fire1") == 1 && Time.time > Lastfired && !Vacuum.IsWorking)
         {
-            Lastfired = fireRate + Time.time;
+            Lastfired = FireRate + Time.time;
             Shoot();
         }
     }

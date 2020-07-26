@@ -95,13 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2bfcf7c99488948a9e48ef044d81bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.2
+  maxFireRate: 0.2
   IsoController: {fileID: 1877561832342557391}
   weaponDistanceFromPlayer: 0.3
   bonusDegree: 60
   TargetOffsetFactor: -50
-  AmmoType: {fileID: 4396131970811870736, guid: cdc2b6ed59a4dea4cab5179ad07c5bd3,
-    type: 3}
+  OnFireRateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  AmmoType: 0
   Vacuum: {fileID: 194436949578828840}
   OnFiringStart:
     m_PersistentCalls:
@@ -687,11 +689,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a7c4761d493284aa4ba5ccd92bac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 5
+  maxFireRate: 5
   IsoController: {fileID: 1877561832342557391}
   weaponDistanceFromPlayer: 0.3
   bonusDegree: 60
   TargetOffsetFactor: -50
+  OnFireRateChanged:
+    m_PersistentCalls:
+      m_Calls: []
   circle: {fileID: 4080120482542898930}
   OnVacumStart:
     m_PersistentCalls:
