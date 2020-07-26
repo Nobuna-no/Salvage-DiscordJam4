@@ -105,8 +105,11 @@ public class AudioManager : MonoBehaviour
 
     public void StopLoopSound()
     {
-        PlayerAudioSource.loop = false;
-        PlayerAudioSource?.Stop();
+        if (PlayerAudioSource)
+        {
+            PlayerAudioSource.loop = false;
+            PlayerAudioSource?.Stop();
+        }
     }
 
     public void PlayHumanDyingRandomAudio(Vector3 location)

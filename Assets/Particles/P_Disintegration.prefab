@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4025144176835162454}
   - component: {fileID: 2492538173983336853}
   m_Layer: 0
-  m_Name: Disintegration
+  m_Name: P_Disintegration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
