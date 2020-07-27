@@ -1023,6 +1023,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 389090611}
     m_Modifications:
+    - target: {fileID: 4660930801400756722, guid: b2ed7a8a998280943a09735bf87d09ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4660930802043996609, guid: b2ed7a8a998280943a09735bf87d09ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1082,6 +1087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grid (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660930802154678190, guid: b2ed7a8a998280943a09735bf87d09ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2ed7a8a998280943a09735bf87d09ab, type: 3}
