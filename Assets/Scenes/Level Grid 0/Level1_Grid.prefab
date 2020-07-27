@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4660930801400756726}
   - component: {fileID: 1431277961}
   - component: {fileID: 1431277960}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Tilemap - Ground - Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11234,7 +11234,7 @@ GameObject:
   - component: {fileID: 4660930802154678178}
   - component: {fileID: 1928654515}
   - component: {fileID: 1928654514}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: Tilemap - Level1- Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}

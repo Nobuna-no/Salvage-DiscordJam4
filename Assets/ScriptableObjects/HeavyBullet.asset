@@ -15,4 +15,4 @@ MonoBehaviour:
   Dammage: 3
   Speed: 20
   Life: 10
-  Radius: 0.3
+  Radius: 1.25

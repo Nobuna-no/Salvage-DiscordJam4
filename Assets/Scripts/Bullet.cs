@@ -14,8 +14,9 @@ public class Bullet : PoolObject
 
     [SerializeField]
     CircleCollider2D collider2d;
-
+    
     private int life;
+    Vector3 originScale;
     public int Life
     {
         get { return life; }
@@ -32,6 +33,7 @@ public class Bullet : PoolObject
     private void Awake()
     {
         Life = script.Life;
+        originScale = transform.localScale;
     }
     protected override void OnEnable()
     {
@@ -43,7 +45,8 @@ public class Bullet : PoolObject
 
     public void SetRadius(float value)
     {
-        collider2d.radius = value;
+        transform.localScale = originScale * value;
+        //collider2d.radius = value;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

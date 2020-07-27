@@ -608,6 +608,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2131164330511148134, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131164330650139257, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131164330723655290, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131164330723655290, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131164330723655290, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2131164330747821450, guid: 516adb980473c7344ab2607eacf8ed03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,6 +693,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[GAMEPLAY]4CScene'
       objectReference: {fileID: 0}
+    - target: {fileID: 2131164331152850610, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718694942796977668, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718694943817956425, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718694943817956425, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718694943817956431, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6902837236043573506, guid: 516adb980473c7344ab2607eacf8ed03,
         type: 3}
       propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -687,6 +737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnAllEnemyDisabled.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EndShake
+      objectReference: {fileID: 0}
+    - target: {fileID: 6902837236043573506, guid: 516adb980473c7344ab2607eacf8ed03,
+        type: 3}
+      propertyPath: initialCount
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 516adb980473c7344ab2607eacf8ed03, type: 3}

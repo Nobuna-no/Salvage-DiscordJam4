@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9130503768794230070}
   - component: {fileID: 5743060608764921772}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: KillSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 5940548342592356649}
   - component: {fileID: 898147188853925921}
   - component: {fileID: 3061710957022092922}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: HeavyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,6 +442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Piouf_Impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1601507512977238839, guid: 6f678a77067126a46804464d07dc69d1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1601507512977238840, guid: 6f678a77067126a46804464d07dc69d1,
         type: 3}

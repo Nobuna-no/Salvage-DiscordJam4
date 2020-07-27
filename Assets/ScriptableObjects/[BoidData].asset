@@ -20,7 +20,7 @@ MonoBehaviour:
   GroupingPercentage: 0.1
   SeparationFGameObject: 10
   CohesionPercentage: 0
-  FleeingPredatorPercentage: 50
-  BorderBouncingForce: 50
-  GoodPlaceAttractionFactor: 5
+  FleeingPredatorPercentage: 30
+  BorderBouncingForce: 1
+  GoodPlaceAttractionFactor: 2
   MaxVelocity: 3

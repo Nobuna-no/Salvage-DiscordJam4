@@ -41,13 +41,15 @@ public class IsometricAutonomousMovementController : MonoBehaviour
             groupingAcc *= -1.0f;
             bIsFleeing = true;
             //borderBouncingAcc *= 5.0f;
+            AudioManager.Instance.PlayHumanYellingRandomAudio(transform.position);
         }
         else
         {
             bIsFleeing = false;
         }
 
-        Vector2 forceSum = new Vector2(Time.deltaTime, 0) + groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
+        float randV = Mathf.Cos(Time.timeSinceLevelLoad);
+        Vector2 forceSum = new Vector2(Random.Range(-randV, randV), Random.Range(-randV, randV)) * Time.deltaTime + groupingAcc + separationAcc + cohesionAcc + fleeingAcc;
         rbody.AddForce(forceSum * BoidsManager.Instance.Data.BoidSpeed, ForceMode2D.Force);
         isoRenderer.SetDirection(rbody.velocity, rbody.velocity);
         rbody.velocity = Vector2.ClampMagnitude(rbody.velocity, BoidsManager.Instance.Data.MaxVelocity);
@@ -57,24 +59,24 @@ public class IsometricAutonomousMovementController : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("GoodPlace"))
         {
-            float radius = collision.gameObject.GetComponent<CircleCollider2D>().radius;
-            Vector3 pos = collision.ClosestPoint(transform.position);
+            //float radius = collision.gameObject.GetComponent<CircleCollider2D>().radius;
+            //Vector3 pos = collision.ClosestPoint(transform.position);
+            Vector3 pos = collision.transform.position;
             Vector3 finalPos = pos - transform.position;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.GoodPlaceAttractionFactor;
             finalPos = Vector2.ClampMagnitude(finalPos, BoidsManager.Instance.Data.MaxVelocity);
             rbody.AddForce(finalPos, ForceMode2D.Force);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("InvisibleWall"))
         {
             Vector3 pos = collision.ClosestPoint(transform.position);
+            //Vector3 pos = collision.transform.position;
             Vector3 finalPos = transform.position - pos;
             finalPos.z = 0;
             finalPos = finalPos * BoidsManager.Instance.Data.BorderBouncingForce * (bIsFleeing ? 2f : 1f);
-            finalPos = Vector2.ClampMagnitude(finalPos, BoidsManager.Instance.Data.MaxVelocity);
+            //finalPos = Vector2.ClampMagnitude(finalPos, BoidsManager.Instance.Data.MaxVelocity);
             rbody.AddForce(finalPos, ForceMode2D.Force);
         }
-
-        AudioManager.Instance.PlayHumanYellingRandomAudio(transform.position);
     }
 }
